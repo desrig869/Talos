@@ -1,0 +1,40 @@
+apiVersion:  projectcalico.org/v3
+kind: BGPConfiguration
+metadata:
+  name: default
+spec:
+  logSeverityScreen: Info
+  asNumber: 64517
+  serviceLoadBalancerIPs:
+    - cidr: 192.168.30.0/24
+---
+apiVersion:  projectcalico.org/v3
+kind:  BGPFilter
+metadata:
+    name: deny-pod
+spec:
+  exportV4:
+  - action: Reject
+    matchOperator: In
+    cidr: 10.52.0.0/16
+--- 
+apiVersion:  projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: bird-router
+spec:
+  peerIP: 192.168.130.10
+  asNumber: 64516
+  filters:
+    - deny-pod
+---
+apiVersion:  projectcalico.org/v3
+kind: BGPPeer
+metadata:
+  name: unifi-router
+spec:
+  peerIP: 192.168.130.1
+  asNumber: 64512
+  filters:
+    - deny-pod
+
