@@ -1,0 +1,29 @@
+cluster:
+  extraManifests:
+    - https://raw.githubusercontent.com/alex1989hu/kubelet-serving-cert-approver/main/deploy/standalone-install.yaml
+    - https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+    - https://github.com/desrig869/Talos/raw/main/Talos/no-speakers-metallb-native.yaml
+    - https://github.com/desrig869/Talos/raw/main/Talos/ipaddress_pools.yaml
+    - https://github.com/desrig869/Talos/raw/main/Talos/l2advertisement.yaml
+  controlPlane:
+    endpoint: https://192.168.130.60:6443
+  network:
+    podSubnets:
+      - 10.244.0.0/16
+    serviceSubnets:
+      - 10.96.0.0/12
+    cni:
+      name:  custom
+      urls:
+        - https://github.com/desrig869/Talos/raw/main/Talos/tigera-operator.yaml
+        - https://github.com/desrig869/Talos/raw/main/Talos/tigera-custom-resources.yaml
+        - https://github.com/desrig869/Talos/raw/main/Talos/calico-bgp.yaml
+machine:
+  network:
+    interfaces:
+    - interface: eth0
+      vip:
+        ip: 192.168.130.60
+  kubelet:
+    extraArgs:
+      rotate-server-certificates: true
