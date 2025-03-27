@@ -4,9 +4,9 @@ cluster:
     - https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
     - https://github.com/desrig869/Talos/raw/main/Talos/tigera-custom-resources.yaml
     - https://github.com/desrig869/Talos/raw/main/Talos/custom-resources.yaml 
-    - /home/des/Talos/Talos/metallb/no-speakers-metallb-native.yaml
-    - /home/des/Talos/Talos/metallb/ipaddress_pools.yaml
-    - /home/des/Talos/Talos/metallb/l2advertisement.yaml
+    - https://github.com/desrig869/Talos/raw/main/Talos/no-speakers-metallb-native.yaml
+    - https://github.com/desrig869/Talos/raw/main/Talos/ipaddress_pools.yaml
+    - https://github.com/desrig869/Talos/raw/main/Talos/l2advertisement.yaml
   controlPlane:
     endpoint: https://192.168.130.60:6443 
   network:
