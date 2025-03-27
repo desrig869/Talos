@@ -1,0 +1,16 @@
+cluster:
+#  controlPlane:
+#    endpoint: https://192.168.130.60:6443 
+  network:
+    podSubnets:
+      - 10.244.0.0/16
+    serviceSubnets:
+      - 10.96.0.0/12
+    cni:
+      name: none
+machine:
+  network:
+    interfaces:
+    - interface: eth0
+      vip:
+        ip: 192.168.130.60

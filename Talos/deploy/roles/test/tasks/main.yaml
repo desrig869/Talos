@@ -1,0 +1,4 @@
+  - name: Ansible dictionary loop Example
+    debug:
+      msg: "Host is {{ item.key}} and IP is {{item.value}}"
+    with_dict: "{{ Control_planes }}"
