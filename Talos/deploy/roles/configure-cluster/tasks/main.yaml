@@ -10,5 +10,5 @@
 # for v.1.7.1
 # ansible.builtin.command: talosctl gen config talos-proxmox-cluster https://{{ control_plane_ip }}:6443 --output-dir {{ config_directory }} --install-image factory.talos.dev/installer/ce4c980550dd2ab1b17bbf2b08801c7eb59418eafe8f279833297925d67c7515:{{ talos_version }}
 # use below for v.1.8 ----- generated online via image factory
-  ansible.builtin.command: talosctl gen config {{ cluster_name }} https://{{ control_plane_ip }}:6443 --output-dir {{ config_directory }}  --install-image {{ talos_version }} --config-patch-control-plane @https://github.com/desrig869/Talos/raw/main/Talos/Talos/patches/cp.yaml --config-patch-worker @/https://github.com/desrig869/Talos/raw/main/Talos/Talos/patches/worker.yaml
+  ansible.builtin.command: talosctl gen config {{ cluster_name }} https://{{ control_plane_ip }}:6443 --output-dir {{ config_directory }}  --install-image {{ talos_version }} --config-patch-control-plane @https://github.com/desrig869/Talos/raw/main/Talos/patches/cp.yaml --config-patch-worker @/https://github.com/desrig869/Talos/raw/main/Talos/patches/worker.yaml
   changed_when: true
