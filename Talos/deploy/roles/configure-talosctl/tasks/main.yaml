@@ -24,3 +24,8 @@
 - name: Get Kubeconfig
   ansible.builtin.command: talosctl kubeconfig . --talosconfig {{ config_file }}
   changed_when: true
+
+# Backup Config files
+- name: Backup  Configs
+  ansible.builtin.command: "{{ talconf_dir }}/backup.sh {{ config_directory }}"
+ 

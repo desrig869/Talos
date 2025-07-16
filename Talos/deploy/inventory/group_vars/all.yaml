@@ -12,6 +12,13 @@ cluster_name: Talos
 talos_version: factory.talos.dev/installer/dc7b152cb3ea99b821fcb7340ce7168313ce393d663740b791c36f6e95fc8586:v1.9.4
 talosctl_version: v1.9.4
 
+#             - siderolabs/iscsi-tools
+#            - siderolabs/qemu-guest-agent
+# talos_version: factory.talos.dev/nocloud-installer/dc7b152cb3ea99b821fcb7340ce7168313ce393d663740b791c36f6e95fc8586:v1.10.5
+# talosctl_version: v1.10.5
+
+
+
 
 control_plane_ip: 192.168.130.61
 
@@ -26,6 +33,7 @@ Workers:
 
 config_directory: "/home/{{ ansible_user }}/.talos"
 config_file: "/home/{{ ansible_user }}/.talos/talosconfig"
+talconf_dir: "/home/{{ ansible_user }}/talconf"
 
 kube_vip_version: "v0.8.0"
 vip_interface: eth0
