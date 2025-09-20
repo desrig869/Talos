@@ -24,6 +24,22 @@ machine:
     - interface: eth0
       vip:
         ip: 192.168.130.60
+  registries:
+    mirrors:
+      docker.io:
+        endpoints:
+          - http://192.168.1.40:5000
+      gcr.io:
+        endpoints:
+          - http://192.168.1.40:5003
+      ghcr.io:
+        endpoints:
+          - http://192.168.1.40:5004
+      registry.k8s.io:
+        endpoints:
+          - http://192.168.1.40:5001
+
+
   kubelet:
     extraArgs:
       rotate-server-certificates: true
