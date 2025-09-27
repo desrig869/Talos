@@ -20,6 +20,10 @@ cluster:
 #        - https://github.com/desrig869/Talos/raw/main/Talos/tigera-operator.yaml
         - https://github.com/desrig869/Talos/raw/main/Talos/calico/tigera-custom-resources.yaml
         - https://github.com/desrig869/Talos/raw/main/Talos/calico/calico-bgp.yaml
+        - https://github.com/desrig869/Talos/raw/main/Talos/calico/calico-config-map.yaml
+     proxy:
+       disabled: true
+
 machine:
   kubelet:
     extraArgs:
