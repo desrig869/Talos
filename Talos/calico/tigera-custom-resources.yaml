@@ -14,7 +14,7 @@ spec:
 #      encapsulation: None
       natOutgoing: Enabled
       nodeSelector: all()
-      linuxDataplane: "BPF"
+#      linuxDataplane: "BPF"
 
 ---
 
@@ -23,7 +23,7 @@ kind: felixconfiguration
     name: default
 spec:
     # Configures Calico BPF 
-  bpfExternalServiceMode: "BPF"
+#  bpfExternalServiceMode: "BPF"
 
 ---
 # This section configures the Calico API server.
