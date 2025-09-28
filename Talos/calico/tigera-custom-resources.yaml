@@ -12,6 +12,11 @@ spec:
       blockSize: 26
       cidr: 10.52.0.0/16
 #      encapsulation: None
+      # - IPIPCrossSubnet
+      # - IPIP ------ Default
+      # - VXLAN
+      # - VXLANCrossSubnet
+      # - None
       natOutgoing: Enabled
       nodeSelector: all()
 #      linuxDataplane: "BPF"
